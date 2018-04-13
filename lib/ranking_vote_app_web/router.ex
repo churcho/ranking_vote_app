@@ -22,6 +22,7 @@ defmodule RankingVoteAppWeb.Router do
   scope "/api", RankingVoteAppWeb do
     pipe_through :api
 
-    post "/vote", VoteController, :create
+    post "/vote",   VoteController,   :create
+    get  "/result", ResultController, :index
   end
 end
