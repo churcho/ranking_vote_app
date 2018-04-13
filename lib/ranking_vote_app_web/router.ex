@@ -19,8 +19,9 @@ defmodule RankingVoteAppWeb.Router do
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", RankingVoteAppWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", RankingVoteAppWeb do
+    pipe_through :api
+
+    post "/vote", VoteController, :create
+  end
 end

@@ -19,7 +19,7 @@ defmodule RankingVoteApp.Mixfile do
   def application do
     [
       mod: {RankingVoteApp.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :goth]
     ]
   end
 
@@ -38,7 +38,9 @@ defmodule RankingVoteApp.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
-      {:distillery, "~> 1.5"}
+      {:distillery, "~> 1.5"},
+      {:diplomat, "~> 0.10.0"},
+      {:croma, "~>0.9.3"}
     ]
   end
 end
