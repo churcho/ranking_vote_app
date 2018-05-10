@@ -10,6 +10,7 @@ defmodule RankingVoteAppWeb.Router do
   end
 
   pipeline :api do
+    plug CORSPlug, origin: ["*"]
     plug :accepts, ["json"]
   end
 
@@ -22,7 +23,9 @@ defmodule RankingVoteAppWeb.Router do
   scope "/api", RankingVoteAppWeb do
     pipe_through :api
 
-    post "/vote",   VoteController,   :create
-    get  "/result", ResultController, :index
+    options "/vote"  , VoteController  , :options
+    post    "/vote"  , VoteController  , :create
+    options "/result", ResultController, :options
+    get     "/result", ResultController, :index
   end
 end

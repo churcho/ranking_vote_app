@@ -40,7 +40,8 @@ defmodule RankingVoteApp.Mixfile do
       {:cowboy, "~> 1.0"},
       {:distillery, "~> 1.5"},
       {:diplomat, "~> 0.10.0"},
-      {:croma, "~>0.9.3"}
+      {:croma, "~> 0.9.3"},
+      {:cors_plug, "~> 1.5"},
     ]
   end
 end
