@@ -27,5 +27,7 @@ defmodule RankingVoteAppWeb.Router do
     post    "/vote"  , VoteController  , :create
     options "/result", ResultController, :options
     get     "/result", ResultController, :index
+    options "/clear" , ClearController , :options
+    get     "/clear" , ClearController , :index
   end
 end

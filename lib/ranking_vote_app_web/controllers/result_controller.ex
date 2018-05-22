@@ -14,7 +14,7 @@ defmodule RankingVoteAppWeb.ResultController do
              |> Enum.reduce(%{}, fn ({c, %{value: v}}, acc) ->
                Map.update(acc, c, v, &(&1 + v))
              end)
-    
+
     json conn, result
   end
 
